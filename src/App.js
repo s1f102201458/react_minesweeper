@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from './Board';
+
+const GAME_ROW = 10;
+const GAME_COL = 10;
+const MINES = 15;
 
 function App() {
+  const containerStyle ={
+    display: 'flex',
+    justifyContent: 'center'
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Minesweeper</h2>
+      <div style={containerStyle}>
+        <Board row = {GAME_ROW} col={GAME_COL} mines={MINES}/>
+      </div>
     </div>
   );
 }
